@@ -7,14 +7,11 @@ Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/Task.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 
-// Make these IDs unique, preferably tied to a domain that you own.
 const PANEL_ID = "catfacts.panel@margaretleibovic.com";
 const DATASET_ID = "catfacts.dataset@margaretleibovic.com";
 
-// This file is just an example of what your XHR endpoint could return.
 const DATA_URL = "http://catfacts-api.appspot.com/api/facts?number=20";
 
-// An example of how to create a string bundle for localization.
 XPCOMUtils.defineLazyGetter(this, "Strings", function() {
   return Services.strings.createBundle("chrome://catfacts/locale/catfacts.properties");
 });
@@ -30,7 +27,6 @@ function optionsCallback() {
   };
 }
 
-// An example XHR request to fetch data for panel.
 function fetchData(url, onFinish) {
   let xhr = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
   try {
