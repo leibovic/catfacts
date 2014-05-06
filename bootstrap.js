@@ -81,6 +81,7 @@ function startup(data, reason) {
 
   switch(reason) {
     case ADDON_INSTALL:
+    case ADDON_ENABLE:
       Home.panels.install(PANEL_ID);
       refreshDataset();
       break;
